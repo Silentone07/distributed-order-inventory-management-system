@@ -46,11 +46,28 @@ public class ProductService {
                   new RuntimeException("Product not found"));
           if(product.getQuantity()>=productRequest.getQuantity()) {
               product.setQuantity(product.getQuantity()-productRequest.getQuantity());
+
               productrepo.save(product);
               return true;
           }
 
         return false;
     }
+
+    @Transactional
+    public boolean relaseStock(ReserveStock productRequest) {
+        Product product=productrepo.findBySku(productRequest.getSku()).orElseThrow(()->
+                new RuntimeException("Product not found"));
+        if(product.getQuantity()>=productRequest.getQuantity()) {
+            product.setQuantity(product.getQuantity()+productRequest.getQuantity());
+
+            productrepo.save(product);
+            return true;
+        }
+
+        return false;
+    }
+
+
 
 }

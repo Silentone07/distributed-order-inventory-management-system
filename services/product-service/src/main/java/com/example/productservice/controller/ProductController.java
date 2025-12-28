@@ -48,6 +48,18 @@ public class ProductController {
              return ResponseEntity.badRequest().body( new ReserveResponse(false,"Insufficient stock"));
         }
     }
+
+    @PostMapping("/release")
+    public ResponseEntity<ReserveResponse>releaseStockDetails(@RequestBody ReserveStock reserveStock) {
+        boolean reserveDet=productService.relaseStock(reserveStock);
+        if(reserveDet) {
+            return ResponseEntity.ok( new ReserveResponse(true,"Stock Released successfully"));
+        } else {
+            return ResponseEntity.badRequest().body( new ReserveResponse(false,"Insufficient stock"));
+        }
+    }
+
+
     @GetMapping("/test")
     public String test() {
         return "Product Service is running!";

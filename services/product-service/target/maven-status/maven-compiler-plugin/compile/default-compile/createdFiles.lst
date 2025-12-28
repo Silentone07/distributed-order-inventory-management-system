@@ -1,0 +1,7 @@
+com\example\productservice\ProductApplication.class
+com\example\productservice\controller\ProductController.class
+com\example\productservice\dto\ReserveResponse.class
+com\example\productservice\repository\ProductRepository.class
+com\example\productservice\dto\ReserveStock.class
+com\example\productservice\service\ProductService.class
+com\example\productservice\entity\Product.class

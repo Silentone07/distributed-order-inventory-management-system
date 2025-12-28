@@ -1,0 +1,678 @@
+2025-12-28 02:22:07 - Running the evict task with compensationTime 10798823ms
+2025-12-28 08:13:56 - Running the evict task with compensationTime 21058382ms
+2025-12-28 08:13:58 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 08:14:34 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 08:14:36 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 08:14:38 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 08:14:56 - Running the evict task with compensationTime 7ms
+2025-12-28 08:15:19 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 08:15:56 - Running the evict task with compensationTime 4ms
+2025-12-28 08:16:56 - Running the evict task with compensationTime 7ms
+2025-12-28 08:17:56 - Running the evict task with compensationTime 13ms
+2025-12-28 08:18:56 - Running the evict task with compensationTime 11ms
+2025-12-28 08:19:56 - Running the evict task with compensationTime 10ms
+2025-12-28 08:20:56 - Running the evict task with compensationTime 8ms
+2025-12-28 08:21:54 - Current renewal threshold is : 10
+2025-12-28 08:21:56 - Running the evict task with compensationTime 3ms
+2025-12-28 08:22:56 - Running the evict task with compensationTime 1ms
+2025-12-28 08:23:56 - Running the evict task with compensationTime 1ms
+2025-12-28 08:24:56 - Running the evict task with compensationTime 5ms
+2025-12-28 08:25:56 - Running the evict task with compensationTime 2ms
+2025-12-28 08:26:57 - Running the evict task with compensationTime 12ms
+2025-12-28 08:27:57 - Running the evict task with compensationTime 2ms
+2025-12-28 08:28:57 - Running the evict task with compensationTime 8ms
+2025-12-28 08:29:57 - Running the evict task with compensationTime 3ms
+2025-12-28 08:30:57 - Running the evict task with compensationTime 10ms
+2025-12-28 08:31:57 - Running the evict task with compensationTime 7ms
+2025-12-28 08:32:57 - Running the evict task with compensationTime 10ms
+2025-12-28 08:33:57 - Running the evict task with compensationTime 12ms
+2025-12-28 08:34:57 - Running the evict task with compensationTime 11ms
+2025-12-28 08:35:57 - Running the evict task with compensationTime 8ms
+2025-12-28 08:36:54 - Current renewal threshold is : 10
+2025-12-28 08:36:57 - Running the evict task with compensationTime 9ms
+2025-12-28 08:37:57 - Running the evict task with compensationTime 13ms
+2025-12-28 08:38:57 - Running the evict task with compensationTime 0ms
+2025-12-28 08:39:57 - Running the evict task with compensationTime 3ms
+2025-12-28 08:40:57 - Running the evict task with compensationTime 6ms
+2025-12-28 08:41:57 - Running the evict task with compensationTime 3ms
+2025-12-28 08:42:57 - Running the evict task with compensationTime 4ms
+2025-12-28 08:43:57 - Running the evict task with compensationTime 1ms
+2025-12-28 08:44:57 - Running the evict task with compensationTime 3ms
+2025-12-28 08:45:57 - Running the evict task with compensationTime 7ms
+2025-12-28 08:46:57 - Running the evict task with compensationTime 2ms
+2025-12-28 08:47:57 - Running the evict task with compensationTime 3ms
+2025-12-28 08:48:57 - Running the evict task with compensationTime 6ms
+2025-12-28 08:49:57 - Running the evict task with compensationTime 1ms
+2025-12-28 08:50:57 - Running the evict task with compensationTime 1ms
+2025-12-28 08:51:54 - Current renewal threshold is : 10
+2025-12-28 08:51:57 - Running the evict task with compensationTime 5ms
+2025-12-28 08:52:57 - Running the evict task with compensationTime 5ms
+2025-12-28 08:53:57 - Running the evict task with compensationTime 8ms
+2025-12-28 08:54:57 - Running the evict task with compensationTime 7ms
+2025-12-28 08:55:57 - Running the evict task with compensationTime 4ms
+2025-12-28 08:56:57 - Running the evict task with compensationTime 2ms
+2025-12-28 08:57:57 - Running the evict task with compensationTime 12ms
+2025-12-28 08:58:57 - Running the evict task with compensationTime 4ms
+2025-12-28 08:59:57 - Running the evict task with compensationTime 17ms
+2025-12-28 09:00:57 - Running the evict task with compensationTime 2ms
+2025-12-28 09:01:57 - Running the evict task with compensationTime 5ms
+2025-12-28 09:02:57 - Running the evict task with compensationTime 9ms
+2025-12-28 09:03:57 - Running the evict task with compensationTime 2ms
+2025-12-28 09:04:57 - Running the evict task with compensationTime 0ms
+2025-12-28 09:05:57 - Running the evict task with compensationTime 0ms
+2025-12-28 09:06:54 - Current renewal threshold is : 10
+2025-12-28 09:06:57 - Running the evict task with compensationTime 9ms
+2025-12-28 09:07:57 - Running the evict task with compensationTime 7ms
+2025-12-28 09:08:57 - Running the evict task with compensationTime 1ms
+2025-12-28 09:09:57 - Running the evict task with compensationTime 1ms
+2025-12-28 09:10:57 - Running the evict task with compensationTime 11ms
+2025-12-28 09:11:57 - Running the evict task with compensationTime 0ms
+2025-12-28 09:12:57 - Running the evict task with compensationTime 7ms
+2025-12-28 09:13:57 - Running the evict task with compensationTime 12ms
+2025-12-28 09:14:57 - Running the evict task with compensationTime 8ms
+2025-12-28 09:15:57 - Running the evict task with compensationTime 9ms
+2025-12-28 09:16:57 - Running the evict task with compensationTime 13ms
+2025-12-28 09:17:57 - Running the evict task with compensationTime 10ms
+2025-12-28 09:18:57 - Running the evict task with compensationTime 7ms
+2025-12-28 09:19:57 - Running the evict task with compensationTime 15ms
+2025-12-28 09:20:57 - Running the evict task with compensationTime 9ms
+2025-12-28 09:21:55 - Current renewal threshold is : 10
+2025-12-28 09:21:57 - Running the evict task with compensationTime 10ms
+2025-12-28 09:22:57 - Running the evict task with compensationTime 7ms
+2025-12-28 09:23:57 - Running the evict task with compensationTime 0ms
+2025-12-28 09:24:57 - Running the evict task with compensationTime 3ms
+2025-12-28 09:25:57 - Running the evict task with compensationTime 13ms
+2025-12-28 09:26:57 - Running the evict task with compensationTime 10ms
+2025-12-28 09:27:57 - Running the evict task with compensationTime 10ms
+2025-12-28 09:28:57 - Running the evict task with compensationTime 9ms
+2025-12-28 12:05:05 - Running the evict task with compensationTime 9308594ms
+2025-12-28 12:06:05 - Running the evict task with compensationTime 0ms
+2025-12-28 12:07:05 - Running the evict task with compensationTime 12ms
+2025-12-28 12:08:05 - Running the evict task with compensationTime 4ms
+2025-12-28 12:09:06 - Running the evict task with compensationTime 15ms
+2025-12-28 12:10:06 - Running the evict task with compensationTime 8ms
+2025-12-28 12:11:06 - Running the evict task with compensationTime 7ms
+2025-12-28 12:12:03 - Current renewal threshold is : 10
+2025-12-28 12:12:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:13:06 - Running the evict task with compensationTime 3ms
+2025-12-28 12:14:06 - Running the evict task with compensationTime 6ms
+2025-12-28 12:15:06 - Running the evict task with compensationTime 1ms
+2025-12-28 12:16:06 - Running the evict task with compensationTime 3ms
+2025-12-28 12:17:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:18:06 - Running the evict task with compensationTime 7ms
+2025-12-28 12:19:06 - Running the evict task with compensationTime 7ms
+2025-12-28 12:19:52 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 12:20:06 - Running the evict task with compensationTime 14ms
+2025-12-28 12:21:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:22:06 - Running the evict task with compensationTime 9ms
+2025-12-28 12:23:06 - Running the evict task with compensationTime 14ms
+2025-12-28 12:24:06 - Running the evict task with compensationTime 2ms
+2025-12-28 12:25:06 - Running the evict task with compensationTime 7ms
+2025-12-28 12:26:06 - Running the evict task with compensationTime 16ms
+2025-12-28 12:27:03 - Current renewal threshold is : 10
+2025-12-28 12:27:06 - Running the evict task with compensationTime 4ms
+2025-12-28 12:28:06 - Running the evict task with compensationTime 8ms
+2025-12-28 12:29:06 - Running the evict task with compensationTime 12ms
+2025-12-28 12:30:06 - Running the evict task with compensationTime 12ms
+2025-12-28 12:31:06 - Running the evict task with compensationTime 6ms
+2025-12-28 12:32:06 - Running the evict task with compensationTime 6ms
+2025-12-28 12:33:06 - Running the evict task with compensationTime 2ms
+2025-12-28 12:34:06 - Running the evict task with compensationTime 6ms
+2025-12-28 12:35:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:36:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:37:06 - Running the evict task with compensationTime 0ms
+2025-12-28 12:38:06 - Running the evict task with compensationTime 9ms
+2025-12-28 12:39:06 - Running the evict task with compensationTime 9ms
+2025-12-28 12:40:06 - Running the evict task with compensationTime 9ms
+2025-12-28 12:41:06 - Running the evict task with compensationTime 8ms
+2025-12-28 12:42:03 - Current renewal threshold is : 10
+2025-12-28 12:42:06 - Running the evict task with compensationTime 0ms
+2025-12-28 12:43:06 - Running the evict task with compensationTime 4ms
+2025-12-28 12:44:06 - Running the evict task with compensationTime 2ms
+2025-12-28 12:45:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:46:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:47:06 - Running the evict task with compensationTime 0ms
+2025-12-28 12:48:06 - Running the evict task with compensationTime 4ms
+2025-12-28 12:49:06 - Running the evict task with compensationTime 14ms
+2025-12-28 12:50:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:51:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:52:06 - Running the evict task with compensationTime 11ms
+2025-12-28 12:53:06 - Running the evict task with compensationTime 5ms
+2025-12-28 12:54:06 - Running the evict task with compensationTime 13ms
+2025-12-28 12:55:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:56:06 - Running the evict task with compensationTime 10ms
+2025-12-28 12:57:03 - Current renewal threshold is : 10
+2025-12-28 12:57:06 - Running the evict task with compensationTime 15ms
+2025-12-28 12:58:06 - Running the evict task with compensationTime 3ms
+2025-12-28 12:59:06 - Running the evict task with compensationTime 12ms
+2025-12-28 13:00:06 - Running the evict task with compensationTime 7ms
+2025-12-28 13:01:06 - Running the evict task with compensationTime 10ms
+2025-12-28 13:02:06 - Running the evict task with compensationTime 9ms
+2025-12-28 13:03:06 - Running the evict task with compensationTime 14ms
+2025-12-28 13:04:06 - Running the evict task with compensationTime 3ms
+2025-12-28 13:05:06 - Running the evict task with compensationTime 7ms
+2025-12-28 13:06:06 - Running the evict task with compensationTime 6ms
+2025-12-28 13:07:06 - Running the evict task with compensationTime 5ms
+2025-12-28 13:08:06 - Running the evict task with compensationTime 14ms
+2025-12-28 13:09:06 - Running the evict task with compensationTime 9ms
+2025-12-28 13:10:06 - Running the evict task with compensationTime 4ms
+2025-12-28 13:11:06 - Running the evict task with compensationTime 1ms
+2025-12-28 13:12:03 - Current renewal threshold is : 10
+2025-12-28 13:12:06 - Running the evict task with compensationTime 14ms
+2025-12-28 13:13:06 - Running the evict task with compensationTime 17ms
+2025-12-28 13:14:06 - Running the evict task with compensationTime 14ms
+2025-12-28 13:15:06 - Running the evict task with compensationTime 0ms
+2025-12-28 13:16:06 - Running the evict task with compensationTime 15ms
+2025-12-28 15:33:48 - Running the evict task with compensationTime 8201642ms
+2025-12-28 15:34:48 - Running the evict task with compensationTime 3ms
+2025-12-28 15:35:48 - Running the evict task with compensationTime 0ms
+2025-12-28 15:36:48 - Running the evict task with compensationTime 8ms
+2025-12-28 15:37:48 - Running the evict task with compensationTime 3ms
+2025-12-28 15:38:48 - Running the evict task with compensationTime 2ms
+2025-12-28 15:39:48 - Running the evict task with compensationTime 13ms
+2025-12-28 15:40:48 - Running the evict task with compensationTime 3ms
+2025-12-28 15:41:48 - Running the evict task with compensationTime 7ms
+2025-12-28 15:42:48 - Running the evict task with compensationTime 0ms
+2025-12-28 15:43:45 - Current renewal threshold is : 10
+2025-12-28 15:43:48 - Running the evict task with compensationTime 1ms
+2025-12-28 15:44:48 - Running the evict task with compensationTime 2ms
+2025-12-28 15:45:48 - Running the evict task with compensationTime 10ms
+2025-12-28 15:46:48 - Running the evict task with compensationTime 12ms
+2025-12-28 15:47:48 - Running the evict task with compensationTime 7ms
+2025-12-28 15:48:48 - Running the evict task with compensationTime 9ms
+2025-12-28 15:49:48 - Running the evict task with compensationTime 0ms
+2025-12-28 15:50:48 - Running the evict task with compensationTime 0ms
+2025-12-28 15:51:48 - Running the evict task with compensationTime 7ms
+2025-12-28 15:52:48 - Running the evict task with compensationTime 15ms
+2025-12-28 15:53:48 - Running the evict task with compensationTime 5ms
+2025-12-28 15:54:48 - Running the evict task with compensationTime 1ms
+2025-12-28 15:55:48 - Running the evict task with compensationTime 4ms
+2025-12-28 15:56:48 - Running the evict task with compensationTime 10ms
+2025-12-28 15:57:48 - Running the evict task with compensationTime 3ms
+2025-12-28 15:58:45 - Current renewal threshold is : 10
+2025-12-28 15:58:48 - Running the evict task with compensationTime 38ms
+2025-12-28 15:59:48 - Running the evict task with compensationTime 0ms
+2025-12-28 16:00:48 - Running the evict task with compensationTime 0ms
+2025-12-28 16:01:48 - Running the evict task with compensationTime 9ms
+2025-12-28 16:02:48 - Running the evict task with compensationTime 3ms
+2025-12-28 16:03:48 - Running the evict task with compensationTime 11ms
+2025-12-28 16:04:48 - Running the evict task with compensationTime 4ms
+2025-12-28 16:05:48 - Running the evict task with compensationTime 3ms
+2025-12-28 16:06:48 - Running the evict task with compensationTime 5ms
+2025-12-28 16:07:48 - Running the evict task with compensationTime 13ms
+2025-12-28 16:08:48 - Running the evict task with compensationTime 8ms
+2025-12-28 16:09:48 - Running the evict task with compensationTime 2ms
+2025-12-28 16:10:48 - Running the evict task with compensationTime 16ms
+2025-12-28 16:15:32 - Running the evict task with compensationTime 223906ms
+2025-12-28 16:16:32 - Running the evict task with compensationTime 0ms
+2025-12-28 16:17:28 - Current renewal threshold is : 10
+2025-12-28 16:17:32 - Running the evict task with compensationTime 12ms
+2025-12-28 16:18:32 - Running the evict task with compensationTime 14ms
+2025-12-28 16:19:32 - Running the evict task with compensationTime 15ms
+2025-12-28 16:20:32 - Running the evict task with compensationTime 8ms
+2025-12-28 16:21:32 - Running the evict task with compensationTime 5ms
+2025-12-28 16:22:32 - Running the evict task with compensationTime 0ms
+2025-12-28 16:23:32 - Running the evict task with compensationTime 9ms
+2025-12-28 16:24:32 - Running the evict task with compensationTime 12ms
+2025-12-28 16:25:32 - Running the evict task with compensationTime 12ms
+2025-12-28 16:41:01 - Running the evict task with compensationTime 869434ms
+2025-12-28 16:42:01 - Running the evict task with compensationTime 2ms
+2025-12-28 16:43:01 - Running the evict task with compensationTime 1ms
+2025-12-28 16:44:01 - Running the evict task with compensationTime 0ms
+2025-12-28 16:45:01 - Running the evict task with compensationTime 11ms
+2025-12-28 16:46:01 - Running the evict task with compensationTime 7ms
+2025-12-28 16:46:58 - Current renewal threshold is : 10
+2025-12-28 16:47:01 - Running the evict task with compensationTime 8ms
+2025-12-28 16:48:01 - Running the evict task with compensationTime 4ms
+2025-12-28 16:49:01 - Running the evict task with compensationTime 4ms
+2025-12-28 16:50:01 - Running the evict task with compensationTime 5ms
+2025-12-28 16:51:01 - Running the evict task with compensationTime 1ms
+2025-12-28 16:52:01 - Running the evict task with compensationTime 10ms
+2025-12-28 16:53:01 - Running the evict task with compensationTime 10ms
+2025-12-28 16:54:01 - Running the evict task with compensationTime 7ms
+2025-12-28 16:55:01 - Running the evict task with compensationTime 11ms
+2025-12-28 16:56:01 - Running the evict task with compensationTime 6ms
+2025-12-28 16:57:01 - Running the evict task with compensationTime 0ms
+2025-12-28 16:58:01 - Running the evict task with compensationTime 13ms
+2025-12-28 16:59:01 - Running the evict task with compensationTime 4ms
+2025-12-28 17:00:01 - Running the evict task with compensationTime 3ms
+2025-12-28 17:01:01 - Running the evict task with compensationTime 8ms
+2025-12-28 17:25:54 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 17:26:31 - Current renewal threshold is : 10
+2025-12-28 17:26:35 - Running the evict task with compensationTime 1473524ms
+2025-12-28 17:27:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:28:35 - Running the evict task with compensationTime 9ms
+2025-12-28 17:29:35 - Running the evict task with compensationTime 6ms
+2025-12-28 17:30:35 - Running the evict task with compensationTime 1ms
+2025-12-28 17:31:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:32:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:33:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:34:35 - Running the evict task with compensationTime 12ms
+2025-12-28 17:35:35 - Running the evict task with compensationTime 14ms
+2025-12-28 17:36:35 - Running the evict task with compensationTime 14ms
+2025-12-28 17:37:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:38:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:39:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:40:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:41:31 - Current renewal threshold is : 10
+2025-12-28 17:41:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:42:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:43:35 - Running the evict task with compensationTime 2ms
+2025-12-28 17:44:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:44:42 - Registered instance ORDER-SERVICE/Amit-PC:order-service:8082 with status DOWN (replication=false)
+2025-12-28 17:44:42 - Registered instance ORDER-SERVICE/Amit-PC:order-service:8082 with status DOWN (replication=true)
+2025-12-28 17:44:49 - Cancelled instance ORDER-SERVICE/Amit-PC:order-service:8082 (replication=false)
+2025-12-28 17:44:49 - DS: Registry: cancel failed because Lease is not registered for: ORDER-SERVICE/Amit-PC:order-service:8082
+2025-12-28 17:44:49 - Not Found (Cancel): ORDER-SERVICE - Amit-PC:order-service:8082
+2025-12-28 17:44:49 - The replication of task ORDER-SERVICE/Amit-PC:order-service:8082:Cancel@localhost failed with response code 404
+2025-12-28 17:44:49 - ORDER-SERVICE/Amit-PC:order-service:8082:Cancel@localhost: missing entry.
+2025-12-28 17:45:35 - Running the evict task with compensationTime 7ms
+2025-12-28 17:46:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:47:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:48:35 - Running the evict task with compensationTime 1ms
+2025-12-28 17:49:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:50:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:51:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:52:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:53:35 - Running the evict task with compensationTime 0ms
+2025-12-28 17:54:35 - Running the evict task with compensationTime 29ms
+2025-12-28 17:55:35 - Running the evict task with compensationTime 1ms
+2025-12-28 17:56:31 - Current renewal threshold is : 8
+2025-12-28 17:56:35 - Running the evict task with compensationTime 4ms
+2025-12-28 17:57:35 - Running the evict task with compensationTime 10ms
+2025-12-28 17:58:35 - Running the evict task with compensationTime 10ms
+2025-12-28 17:59:35 - Running the evict task with compensationTime 11ms
+2025-12-28 18:00:35 - Running the evict task with compensationTime 8ms
+2025-12-28 18:01:35 - Running the evict task with compensationTime 15ms
+2025-12-28 18:02:35 - Running the evict task with compensationTime 2ms
+2025-12-28 18:03:35 - Running the evict task with compensationTime 5ms
+2025-12-28 18:04:35 - Running the evict task with compensationTime 8ms
+2025-12-28 18:05:35 - Running the evict task with compensationTime 4ms
+2025-12-28 18:06:35 - Running the evict task with compensationTime 5ms
+2025-12-28 18:07:35 - Running the evict task with compensationTime 12ms
+2025-12-28 18:08:35 - Running the evict task with compensationTime 5ms
+2025-12-28 18:09:35 - Running the evict task with compensationTime 11ms
+2025-12-28 18:10:35 - Running the evict task with compensationTime 8ms
+2025-12-28 18:11:37 - Current renewal threshold is : 8
+2025-12-28 18:11:41 - Running the evict task with compensationTime 6003ms
+2025-12-28 18:12:41 - Running the evict task with compensationTime 13ms
+2025-12-28 18:13:41 - Running the evict task with compensationTime 1ms
+2025-12-28 18:14:41 - Running the evict task with compensationTime 3ms
+2025-12-28 22:52:29 - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:531)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:662)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:661)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:483)
+	... 16 common frames omitted
+2025-12-28 22:53:08 - Running the evict task with compensationTime 16655670ms
+2025-12-28 22:54:08 - Running the evict task with compensationTime 12ms
+2025-12-28 22:55:08 - Running the evict task with compensationTime 5ms
+2025-12-28 22:56:08 - Running the evict task with compensationTime 2ms
+2025-12-28 22:57:08 - Running the evict task with compensationTime 15ms
+2025-12-28 22:58:08 - Running the evict task with compensationTime 11ms
+2025-12-28 22:59:08 - Running the evict task with compensationTime 13ms
+2025-12-28 23:00:08 - Running the evict task with compensationTime 0ms
+2025-12-28 23:01:08 - Running the evict task with compensationTime 6ms
+2025-12-28 23:02:08 - Running the evict task with compensationTime 5ms
+2025-12-28 23:03:08 - Running the evict task with compensationTime 8ms
+2025-12-28 23:04:04 - Current renewal threshold is : 8
+2025-12-28 23:04:08 - Running the evict task with compensationTime 5ms
+2025-12-28 23:05:08 - Running the evict task with compensationTime 0ms
+2025-12-28 23:06:08 - Running the evict task with compensationTime 12ms
+2025-12-28 23:07:08 - Running the evict task with compensationTime 7ms
+2025-12-28 23:08:08 - Running the evict task with compensationTime 6ms
+2025-12-28 23:09:08 - Running the evict task with compensationTime 6ms
+2025-12-28 23:10:08 - Running the evict task with compensationTime 2ms
+2025-12-28 23:11:08 - Running the evict task with compensationTime 5ms
+2025-12-28 23:12:08 - Running the evict task with compensationTime 3ms
+2025-12-28 23:13:08 - Running the evict task with compensationTime 14ms
+2025-12-28 23:14:08 - Running the evict task with compensationTime 11ms
+2025-12-28 23:15:08 - Running the evict task with compensationTime 14ms
+2025-12-28 23:16:08 - Running the evict task with compensationTime 6ms
+2025-12-28 23:17:08 - Running the evict task with compensationTime 14ms
+2025-12-28 23:18:08 - Running the evict task with compensationTime 3ms
+2025-12-28 23:19:04 - Current renewal threshold is : 8
+2025-12-28 23:19:08 - Running the evict task with compensationTime 13ms
+2025-12-28 23:20:08 - Running the evict task with compensationTime 10ms
+2025-12-28 23:21:08 - Running the evict task with compensationTime 3ms
+2025-12-28 23:22:08 - Running the evict task with compensationTime 5ms
+2025-12-28 23:23:08 - Running the evict task with compensationTime 1ms
+2025-12-28 23:24:08 - Running the evict task with compensationTime 4ms
+2025-12-28 23:25:08 - Running the evict task with compensationTime 3ms
+2025-12-28 23:26:08 - Running the evict task with compensationTime 0ms
+2025-12-28 23:27:08 - Running the evict task with compensationTime 11ms
+2025-12-28 23:28:08 - Running the evict task with compensationTime 10ms
+2025-12-28 23:29:08 - Running the evict task with compensationTime 6ms
+2025-12-28 23:30:08 - Running the evict task with compensationTime 11ms
+2025-12-28 23:31:08 - Running the evict task with compensationTime 12ms
