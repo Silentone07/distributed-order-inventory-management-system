@@ -1,0 +1,66 @@
+2026-01-15 17:02:53 - Starting EurekaServerApplication using Java 17.0.12 with PID 7584 (C:\projects\distributed-order-inventory-system\services\eureka-server\target\classes started by amitk in C:\projects\distributed-order-inventory-system)
+2026-01-15 17:02:53 - No active profile set, falling back to 1 default profile: "default"
+2026-01-15 17:03:11 - BeanFactory id=a065ca1d-2727-378c-abf3-f1c1b4626ccf
+2026-01-15 17:03:17 - Tomcat initialized with port(s): 8761 (http)
+2026-01-15 17:03:17 - Starting service [Tomcat]
+2026-01-15 17:03:17 - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2026-01-15 17:03:19 - Initializing Spring embedded WebApplicationContext
+2026-01-15 17:03:19 - Root WebApplicationContext: initialization completed in 24482 ms
+2026-01-15 17:03:33 - Using JSON encoding codec LegacyJacksonJson
+2026-01-15 17:03:33 - Using JSON decoding codec LegacyJacksonJson
+2026-01-15 17:03:37 - Using XML encoding codec XStreamXml
+2026-01-15 17:03:37 - Using XML decoding codec XStreamXml
+2026-01-15 17:04:02 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15 17:04:02 - Setting initial instance status as: STARTING
+2026-01-15 17:04:03 - Initializing Eureka in region us-east-1
+2026-01-15 17:04:03 - Client configured to neither register nor query for data.
+2026-01-15 17:04:03 - Discovery Client initialized at timestamp 1768476843189 with initial instances count: 0
+2026-01-15 17:04:03 - Initializing ...
+2026-01-15 17:04:03 - Adding new peer nodes [http://localhost:8761/eureka/]
+2026-01-15 17:04:04 - Using JSON encoding codec LegacyJacksonJson
+2026-01-15 17:04:04 - Using JSON decoding codec LegacyJacksonJson
+2026-01-15 17:04:04 - Using XML encoding codec XStreamXml
+2026-01-15 17:04:04 - Using XML decoding codec XStreamXml
+2026-01-15 17:04:05 - Replica node URL:  http://localhost:8761/eureka/
+2026-01-15 17:04:05 - Finished initializing remote region registries. All known remote regions: []
+2026-01-15 17:04:05 - Initialized
+2026-01-15 17:04:05 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-01-15 17:04:06 - Registering application EUREKA-SERVER with eureka with status UP
+2026-01-15 17:04:06 - isAws returned false
+2026-01-15 17:04:06 - Initialized server context
+2026-01-15 17:04:06 - Got 1 instances from neighboring DS node
+2026-01-15 17:04:06 - Renew threshold is: 1
+2026-01-15 17:04:06 - Changing status to UP
+2026-01-15 17:04:06 - Started Eureka Server
+2026-01-15 17:04:06 - Tomcat started on port(s): 8761 (http) with context path ''
+2026-01-15 17:04:06 - Updating port to 8761
+2026-01-15 17:04:08 - Started EurekaServerApplication in 83.214 seconds (process running for 87.355)
+2026-01-15 17:05:06 - Running the evict task with compensationTime 0ms
+2026-01-15 17:05:15 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-15 17:05:15 - Initializing Servlet 'dispatcherServlet'
+2026-01-15 17:05:15 - Completed initialization in 12 ms
+2026-01-15 17:05:17 - Registered instance PAYMENT-SERVICE/Amit-PC:payment-service:8083 with status UP (replication=false)
+2026-01-15 17:05:18 - Registered instance PAYMENT-SERVICE/Amit-PC:payment-service:8083 with status UP (replication=true)
+2026-01-15 17:06:06 - Running the evict task with compensationTime 15ms
+2026-01-15 17:06:12 - Registered instance PRODUCT-SERVICE/Amit-PC:product-service:8081 with status UP (replication=false)
+2026-01-15 17:06:13 - Registered instance PRODUCT-SERVICE/Amit-PC:product-service:8081 with status UP (replication=true)
+2026-01-15 17:06:14 - Registered instance NOTIFICATION-SERVICE/Amit-PC:notification-service:8084 with status UP (replication=false)
+2026-01-15 17:06:14 - Registered instance NOTIFICATION-SERVICE/Amit-PC:notification-service:8084 with status UP (replication=true)
+2026-01-15 17:06:58 - Registered instance ORDER-SERVICE/Amit-PC:order-service:8082 with status UP (replication=false)
+2026-01-15 17:06:59 - Registered instance ORDER-SERVICE/Amit-PC:order-service:8082 with status UP (replication=true)
+2026-01-15 17:07:06 - Running the evict task with compensationTime 10ms
+2026-01-15 17:08:06 - Running the evict task with compensationTime 3ms
+2026-01-15 17:09:06 - Running the evict task with compensationTime 7ms
+2026-01-15 17:10:06 - Running the evict task with compensationTime 3ms
+2026-01-15 17:11:06 - Running the evict task with compensationTime 2ms
+2026-01-15 17:12:06 - Running the evict task with compensationTime 9ms
+2026-01-15 17:13:06 - Running the evict task with compensationTime 1ms
+2026-01-15 17:14:06 - Running the evict task with compensationTime 5ms
+2026-01-15 17:15:06 - Running the evict task with compensationTime 10ms
+2026-01-15 17:16:06 - Running the evict task with compensationTime 15ms
+2026-01-15 17:17:06 - Running the evict task with compensationTime 11ms
+2026-01-15 17:18:06 - Running the evict task with compensationTime 7ms
+2026-01-15 17:19:05 - Current renewal threshold is : 8
+2026-01-15 17:19:06 - Running the evict task with compensationTime 4ms
+2026-01-15 17:20:06 - Running the evict task with compensationTime 10ms
+2026-01-15 17:21:06 - Running the evict task with compensationTime 14ms

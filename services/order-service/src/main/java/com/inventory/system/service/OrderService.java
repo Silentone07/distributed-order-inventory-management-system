@@ -2,7 +2,10 @@ package com.inventory.system.service;
 
 import com.inventory.system.dto.*;
 import com.inventory.system.entity.Order;
+import com.inventory.system.kafka.OrderEventProducer;
 import com.inventory.system.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -12,6 +15,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
+@Log4j2
 @Service
 public class OrderService {
 
@@ -29,6 +33,16 @@ public class OrderService {
 
     @Autowired
    private PaymentFeignClient paymentFeignClient;
+
+    @Autowired
+   private OrderServiceCircuitBreakerImplementation orderServiceCircuit;
+
+    @Autowired
+   private PaymentServiceWrapper paymentServiceWrapper;
+
+
+
+   private  OrderEventProducer orderEventProducer;
 
     public OrderService(WebClient.Builder webClientBuilder) {
         this.webClientBuilder = webClientBuilder;
@@ -134,7 +148,7 @@ public class OrderService {
     public Order createOrder(OrderRequest orderRequest) {
         ReserveStock reserveStock=new ReserveStock(orderRequest.getSku(),orderRequest.getQuantity());
 
-        ReserveResponse reserveResponse = productClient.reserveStock(orderRequest);
+        ReserveResponse reserveResponse = orderServiceCircuit.productReserveResponse(reserveStock);
 
           Order order=new Order();
           order.setSku(orderRequest.getSku());
@@ -155,16 +169,20 @@ public class OrderService {
 //                          .retrieve()
 //                          .bodyToMono(PaymentResponse.class)
 //                          .block();
-                  PaymentResponse paymentResponse= paymentFeignClient.processPayment(paymentRequest);
+                  PaymentResponse paymentResponse=paymentServiceWrapper.processPayment(paymentRequest);
                   if(paymentResponse!=null && paymentResponse.isSuccess()) {
                       order.setStatus("CONFIRMED");
+
+
 
                       NotificationRequest notificationRequest= new NotificationRequest(order.getOrderNumber(), "user@example.com",
                               "Your order " + order.getOrderNumber() + " has been completed successfully!");
 
-                      notificationClient.sendNotification(notificationRequest);
+                      orderServiceCircuit.notificationResponse(notificationRequest);
                   } else {
+                      log.info("Orderservice ->" + " paymentresponse : " + paymentResponse);
                       order.setStatus("PAYMENT_FAILED");
+                      productClient.releaseStock(orderRequest);
                       NotificationRequest notificationRequest= new NotificationRequest(order.getOrderNumber(), "user@example.com",
                               "Your order " + order.getOrderNumber() + " payment failed!");
 
@@ -177,6 +195,15 @@ public class OrderService {
           } else {
               order.setStatus("FAILED");
           }
+
+          OrderEvent event=new OrderEvent(
+                  "ORDER-CREATED",
+                  order.getOrderNumber(),
+                  order.getSku(),
+                  order.getQuantity(),
+                  order.getStatus());
+
+        orderEventProducer.sendOrderCreatedEvent(event);
         return  orderRepository.save(order);
          // return "Order service";
     }

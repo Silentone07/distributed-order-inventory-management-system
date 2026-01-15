@@ -4,8 +4,6 @@ import com.inventory.system.dto.OrderRequest;
 import com.inventory.system.dto.ReserveResponse;
 import com.inventory.system.dto.ReserveStock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -17,7 +15,7 @@ public class ProductClient {
     private final WebClient.Builder webClientBuilder;
 
     @Autowired
-     private ProductClientInterface productClientInterface;
+     private ProductFeignClient productClientInterface;
 
     public ProductClient(WebClient.Builder webClientBuilder) {
         this.webClientBuilder = webClientBuilder;
@@ -37,14 +35,18 @@ public class ProductClient {
         return productClientInterface.reserveStock(reserveStock);
     }
 
-    public void releaseStock(String sku, int quantity) {
-        ReserveStock request = new ReserveStock();
+    public ReserveResponse releaseStock(OrderRequest orderRequest) {
 
-        webClient.post()
-                .uri("http://localhost:8081/api/products/release")
-                .bodyValue(request)
-                .retrieve()
-                .toBodilessEntity()
-                .block();
+        ReserveStock reserveStock = new ReserveStock(orderRequest.getSku(), orderRequest.getQuantity());
+
+//        webClient.post()
+//                .uri("http://localhost:8081/api/products/release")
+//                .bodyValue(request)
+//                .retrieve()
+//                .toBodilessEntity()
+//                .block();
+
+        return productClientInterface.releaseStock(reserveStock);
+
     }
 }
